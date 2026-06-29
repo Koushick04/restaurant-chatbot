@@ -1,0 +1,47 @@
+﻿# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build
+dist/
+build/
+frontend/dist/
+*.tsbuildinfo
+*.local
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local AI/tooling workspaces
+.agents/
+.codex/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Testing
+coverage/
+
+# Vercel
+.vercel
+
