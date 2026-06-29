@@ -1,9 +1,9 @@
 ﻿import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, Session, User } from "@supabase/supabase-js";
 
 interface AuthContextType {
-  session: any | null;
-  user: any | null;
+  session: Session | null;
+  user: User | null;
   loading: boolean;
   signIn: (email: string, password: string) => Promise<{ user: any | null; error: any | null }>;
   signOut: () => Promise<{ error: any | null }>;
@@ -19,8 +19,8 @@ const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supa
 
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [session, setSession] = useState<any | null>(null);
-  const [user, setUser] = useState<any | null>(null);
+    const [session, setSession] = useState<Session | null>(null);
+    const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
